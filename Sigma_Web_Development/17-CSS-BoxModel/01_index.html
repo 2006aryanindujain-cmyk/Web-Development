@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Boxmodel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            background-color: cyan;
+        }
+
+        .box1 {
+            color: red;
+            padding: 10px;
+            margin: 25px;
+            border: 5px solid red;
+            height: 200px;
+            box-sizing: border-box;
+        }
+
+        .box2 {
+            color: green;
+            padding: 20px;
+            margin: 25px;
+            border: 5px solid black;
+            height: 250px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">I am a box</div>
+    <div class="box box2">I am another box</div>
+</body>
+
+</html>
+
+
+
+<!-- One element can have multiple classes -->
+<!-- One element cannot have multiple Ids -->
+<!-- total width of the element = width + left padding + right padding +left border + right border + left margin + right margin -->
+<!-- total height of the element = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin -->
+<!-- box-sizing: border-box; ka use ye ensure karne ke liye hota hai ki element ka padding aur border uski di gayi width aur 
+     height ke andar hi include rahe, bahar na faile. -->
+<!-- content-box (Default) -> text{Width} + text{Padding} + text{Border} -> Box screen par specified size se bada dikhta hai. -->
+<!-- border-box -> text{Exact Set Width / Height} -> Padding aur border andar adjust ho jate hain; box size fix rehta hai. -->
+<!-- Margin Collapse CSS ka ek default behavior hai jisme do adjacent block-level elements ke vertical margins (top aur bottom) 
+     aapas mein add hone ke bajaye ek single margin mein combine (collapse) ho jate hain.
+     Collapsed margin ka size dono margins mein se bade margin ke barabar hota hai.
+     Horizontal margins (left / right) kabhi collapse nahi hote.
+     Dono positive hone par maximum margin choose hota hai.
+     Ek positive aur ek negative hone par: Positive Margin - |Negative Margin|.
+     Dono negative hone par most negative (sabse chhota) choose hota hai.
+     Parent-Child Collapse: Agar kisi parent container ke paas padding/border nahi hai, toh pehle child ka 
+     margin-top parent ke margin-top ke sath collapse ho jata hai.
+     Margin Collapse Ko Kaise Rokein:-1. Parent par padding ya border add karein.
+                                      2. Elements par (display: flex) ya (display: grid) use karein (Flex/Grid items 
+                                         ke margins collapse nahi hote).
+                                      3. Parent container par (overflow: hidden;) ya (display: flow-root;) lagayein. -->
