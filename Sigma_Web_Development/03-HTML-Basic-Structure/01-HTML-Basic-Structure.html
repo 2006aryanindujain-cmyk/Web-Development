@@ -1,0 +1,31 @@
+<!--To get the basic syntax of HTML type ! and then press tab-->
+
+
+<!--Basic Structure of an HTML-->
+<!DOCTYPE html> <!--tells the browser that it is HTML5 document , it is like a header file but it not import anything-->
+<html lang="en"> <!--<html> = root tag, matlab pura page isi tag ke andar hota hai (jaise ek box jisme sab kuch rakha hai). 
+                      lang="en" batata hai page English mein hai -->
+
+<head> <!-- Ye section invisible hota hai — user ko page pe kuch nahi dikhta jo head ke andar hai. 
+                      Yahan sirf "settings/info" about the page hoti hai, content nahi.-->
+    <meta charset="UTF-8"> <!--Batata hai page kis character encoding mein hai — UTF-8 matlab English, Hindi, emoji,
+                              special symbols (₹, é, 你好) sab sahi se display honge. Bina iske kabhi kabhi text 
+                              galat/corrupt dikh sakta hai.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobile responsiveness ke liye. Bina isse,
+                                                                                mobile pe website chhoti/zoomed-out dikhegi
+                                                                                 (jaise desktop version squeeze ho gaya). Isse
+                                                                                  browser ko pata chalta hai "screen ke jitna width hai,
+                                                                                   usi hisaab se page fit kar" — isliye mobile pe bhi properly
+                                                                                    dikhta hai.-->
+    <title>Document</title>
+    <!--Jo naam browser tab ke top pe dikhta hai (jaise jab tu YouTube khol ta hai, tab pe "YouTube" likha hota hai — wahi 
+                        isse aata hai). Tujhe "Document" ko change karke apna page ka naam dalna hoga, jaise <title>My Portfolio</title>.-->
+</head> <!--Head section band ho gaya — yahan tak jo bhi tha, wo invisible settings thi.-->
+
+<body> <!--Ab yahan se actual visible content start hota hai — jo bhi user browser mein dekhega, sab isi tag ke andar likhna hoga (text, 
+      images, buttons, sab kuch).-->
+    <h1>Hello World</h1>
+    <p>This is my first webpage</p>
+</body>
+
+</html> <!-- Pura document yahan close ho gaya — <html> tag jo line 2 pe khula tha, wo yahan band hua.-->
