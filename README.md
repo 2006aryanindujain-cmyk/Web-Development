@@ -26,7 +26,7 @@ Each folder represents a topic, numbered in learning order (e.g., 01-, 02-...).
 Files contain notes (as comments) along with practice code together.
 
 ## ✅ Current Status
--13 lectures of SIGMA WEB DEVELOPMENT COURSE completed.
+-20 lectures of SIGMA WEB DEVELOPMENT COURSE completed.
 
 ## 🔗 Connect
 LinkedIn: [www.linkedin.com/in/aryan-jain-173961390]
