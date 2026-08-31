@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: aqua;
+            /* color: cyan !important; */
+        }
+
+        h1.cpurple {
+            color: purple;
+        }
+
+        .cpurple {
+            color: purple;
+        }
+
+        .cred {
+            color: red;
+        }
+
+        .yellow {
+            color: yellow;
+        }
+
+        /* This is an example of an attribute selector. */
+        [data-x=a] {
+            color: cyan;
+        }
+
+        /* 1 + 10 + 10 + 10 = 41 */
+        /* Color is not green bcz it is targeting "Find an <a> element having classes aryanclass and 
+           rohan-class, having an href attribute, and currently being hovered." */
+        a.aryanclass.rohan-class[href]:hover {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 class="yellow cred cpurple a.aryanclass.rohan-class[href]:hover" data-x="a">CSS Specificity</h1>
+    </div>
+</body>
+
+</html>
+
+<!-- The CSS Cascade Algorithm is the browser's conflict-resolution system that determines which
+     CSS declaration is applied when multiple competing rules target the same property. -->
+
+<!-- The browser evaluates conflicting declarations through a specific hierarchy. The first
+     factor that determines a winner decides which declaration is applied. -->
+
+<!-- 1. Origin & Importance :-
+
+     -> CSS declarations have different levels of priority based on their origin and whether
+        !important is used (Highest to Lowest):
+
+     a. CSS Transitions.
+     b. Important User-Agent styles.
+     c. Important User styles.
+     d. Important Author styles.
+     e. CSS Animations.
+     f. Normal Author styles.
+     g. Normal User styles.
+     h. Normal User-Agent styles. -->
+
+<!-- 2. Context (Encapsulation / Shadow DOM) :-
+
+     -> This stage resolves conflicts between styles from different encapsulation contexts,
+        such as the Light DOM and Shadow DOM.
+
+     a. Normal styles: Styles from the outer context have priority over inner context styles.
+     b. !important styles: The priority is reversed, so inner context styles beat outer context
+        styles. -->
+
+<!-- 3. Cascade Layers (@layer) :-
+
+     -> Cascade layers allow CSS to be organized into different levels of priority.
+
+     a. Normal styles: Unlayered styles beat layered styles. Among layers, the later-declared
+        layer has higher priority.
+
+     b. !important styles: The order is reversed. Earlier-declared layers have higher priority
+        than later-declared layers, and layered !important beats unlayered !important. -->
+
+<!-- 4. Specificity (Selector Weight) :-
+
+     -> If the previous stages do not determine a winner, the browser compares the specificity
+        of the selectors.
+
+     -> Specificity is represented using the tuple (A, B, C, D):
+
+     a. A = Inline styles: style="..."              → (1, 0, 0, 0)
+     b. B = IDs: #header, #nav                     → (0, 1, 0, 0)
+     c. C = Classes, Attributes, Pseudo-classes:
+        .btn, [type="text"], :hover                → (0, 0, 1, 0)
+     d. D = Elements, Pseudo-elements:
+        div, p, ::before                            → (0, 0, 0, 1)
+
+     -> The browser compares the values from left to right. A higher value in the left-most
+        column wins, regardless of how many lower-tier selectors exist.
+
+        Example:
+        (0, 1, 0, 0) beats (0, 0, 15, 0). -->
+
+<!-- 5. Order of Appearance (Source Order) :-
+
+     -> If all previous stages result in a tie (same origin, context, layer, and specificity):
+
+     a. The last declared rule wins — the rule written later in the CSS or loaded later has
+        higher priority. -->
+
+<!-- EASY WAY TO REMEMBER :-
+
+     Origin & Importance
+             ↓
+     Context
+             ↓
+     Cascade Layers
+             ↓
+     Specificity
+             ↓
+     Source Order
+
+     The browser moves through these stages and determines which CSS declaration wins. -->
+
+<!-- User-Agent Style Sheet = Browser's default CSS. -->
