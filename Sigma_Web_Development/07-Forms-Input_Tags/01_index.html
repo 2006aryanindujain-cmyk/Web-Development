@@ -9,12 +9,13 @@
 
 <body>
     <h1>Form to apply for internship</h1>
-    <form action="post">
-        <div>
+    <form action="/submit" method="post">
+    <div>
             <label for="username">Enter your Username:-</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" autofocus>
-        </div>
-        <input type="radio" id="male" name="gender" value="male" <label for="" male">Male</label>
+    </div>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
         <input type="radio" id="female" name="gender" value="female">
         <label for="female">Female</label>
         <input type="submit" value="Submit">
@@ -29,13 +30,32 @@
         </div>
 
         <div>
-            <select name="fruits"></select>
-            <option value="apple">Apple</option>
-            <option value="banana">Banana</option>
-            <option value="cherry">Cherry</option>
+            <label for="fruits">Choose a fruit:</label>
+            <select id="fruits" name="fruits">
+                <option value="apple">Apple</option>
+                <option value="banana">Banana</option>
+                <option value="cherry">Cherry</option>
             </select>
         </div>
     </form>
 </body>
 
 </html>
+
+<!-- form tag is used to create an HTML form for user input -->
+<!-- action="post" is the HTTP method used to submit the form data -->
+<!-- label tag is used to define a label for an input element -->
+<!-- input tag is used to create an input field for user input -->
+<!-- select tag is used to create a dropdown list -->
+<!-- option tag is used to define an option in a dropdown list -->
+<!-- textarea tag is used to create a multi-line text input field -->
+<!-- for attribute links a label to an input element -->
+<!-- action → Data kahan bhejna hai -->
+<!-- method → Data kaise bhejna hai (GET/POST) -->
+<!-- for="username" labe ko id="username" wale input se connect karta hai. -->
+
+<!-- <form action="URL" method="post">
+        <label for="id">Label</label>
+        <input type="text" id="id" name="name">
+     </form> 
+ -->
