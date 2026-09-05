@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 2px solid black;
+            padding: 34px;
+            box-shadow: 5px 15px 15px #60ceea;
+            outline: 2px solid black;
+            outline-offset: 10px;
+            border-radius: 10px;
+        }
+
+        .text-shadow {
+            text-shadow: 10px 5px 3px #e23bea;
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        I am a box.
+    </div>
+    <p class="text-shadow">I am a text shadow.</p>
+    <!-- outline -->
+    <div class="box">I am a box with an outline.</div>
+</body>
+
+</html>
+
+<!-- Outlines don't take up space, they are drawn around the element, outside the border -->
+<!-- Using the outline-offset property, we can set the space between an outline  and the edge or border of an element. -->
+<!-- Borders can have varying widths on different sides, outlines have a uniform width.-->
+<!-- Border can have rounded corners using border-radius, while outlines generally cannot. -->
